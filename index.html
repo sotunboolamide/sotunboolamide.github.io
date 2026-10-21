@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Sotunbo, Senior Site Reliability Engineer</title>
+<meta name="description" content="Senior Site Reliability Engineer in Malta. 7+ years running Kubernetes, Terraform and observability for real-time iGaming, application security and AI platforms.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="David Sotunbo, Senior Site Reliability Engineer">
+<meta property="og:description" content="Senior SRE in Malta working on real-time iGaming platforms with a 99.99% SLA. Open to senior SRE, DevOps and platform roles.">
+<meta property="og:url" content="https://sotunboolamide.github.io/">
+<link rel="canonical" href="https://sotunboolamide.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1626'/%3E%3Crect x='5' y='8' width='12' height='4' rx='2' fill='%236A9BF2'/%3E%3Crect x='10' y='14' width='12' height='4' rx='2' fill='%23A38AEB'/%3E%3Crect x='15' y='20' width='12' height='4' rx='2' fill='%23F2A93B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Recursive:wght,MONO@300..1000,0..1&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F3F5F9;
+    --surface: #FFFFFF;
+    --ink: #131A28;
+    --muted: #556075;
+    --line: #DCE1EA;
+    --grid: #EBEEF4;
+    --accent: #A35C00;
+    --btn: #E8A13A;
+    --btn-ink: #1A1206;
+    --ok: #1E8A55;
+    --s-eeze: #E39417;
+    --s-invicti: #3F78DD;
+    --s-modl: #8463D3;
+    --s-planatech: #25907F;
+    --s-cloud: #C9506C;
+    --s-nweafor: #5E8F2E;
+    --s-ehealth: #2C97BA;
+    --s-penguin: #8C6A4A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #0E1626;
+      --surface: #132036;
+      --ink: #E6EBF3;
+      --muted: #9AA6BA;
+      --line: #25344D;
+      --grid: #1B2A42;
+      --accent: #F2AE4B;
+      --btn: #F2AE4B;
+      --btn-ink: #1A1206;
+      --ok: #3DD68C;
+      --s-eeze: #F2A93B;
+      --s-invicti: #6A9BF2;
+      --s-modl: #A38AEB;
+      --s-planatech: #3FBFAA;
+      --s-cloud: #E77A93;
+      --s-nweafor: #8DBF55;
+      --s-ehealth: #55BEE0;
+      --s-penguin: #B8946F;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Recursive", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-variation-settings: "MONO" 0;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .mono { font-variation-settings: "MONO" 1; }
+
+  .wrap { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
+  .skip { position: absolute; left: -999px; top: 0; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 10; background: var(--surface); padding: 0.5rem 0.75rem; }
+
+  /* Navigation */
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; }
+  .nav-name { color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding-block: clamp(2.5rem, 8vw, 6rem) 0; }
+  .hero h1 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.75rem, 7.5vw, 5.75rem);
+    font-weight: 850;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .lede { margin: 0 0 2rem; max-width: 60ch; color: var(--muted); font-size: clamp(1.1rem, 1.6vw, 1.25rem); }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .btn {
+    display: inline-flex; align-items: center;
+    padding: 0.8rem 1.3rem;
+    border: 1px solid transparent; border-radius: 0.6rem;
+    font-size: 1rem; font-weight: 650; text-decoration: none;
+  }
+  .btn-primary { background: var(--btn); color: var(--btn-ink); }
+  .btn-primary:hover { filter: brightness(1.06); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { border-color: var(--muted); }
+  .status { display: flex; align-items: center; gap: 0.65rem; margin: 1.5rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  .dot {
+    flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent);
+  }
+
+  /* Experience trace */
+  .trace {
+    --t0: 2018;
+    --t1: 2027;
+    --now: 2026.8;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding: 1.4rem clamp(1rem, 2.5vw, 1.75rem) 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+  }
+  .trace-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem; }
+  .trace-head h2 { margin: 0; font-size: 1.3rem; letter-spacing: -0.01em; }
+  .trace-count { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  .trace-hint { margin: 0.2rem 0 0.75rem; color: var(--muted); font-size: 0.92rem; }
+
+  .row {
+    display: grid;
+    grid-template-columns: 15.5rem 1fr 10rem 1rem;
+    align-items: center;
+    column-gap: 1rem;
+  }
+  .track { position: relative; }
+  .axis { border-bottom: 1px solid var(--line); }
+  .axis .chev { visibility: hidden; }
+  .axis .track { height: 2.4rem; }
+  .tick {
+    position: absolute; bottom: 0.35rem;
+    left: calc((var(--y) - var(--t0)) / (var(--t1) - var(--t0)) * 100%);
+    height: 1.05rem; padding-left: 0.3rem;
+    display: flex; align-items: flex-end;
+    border-left: 1px solid var(--line);
+    color: var(--muted); font-size: 0.72rem; line-height: 1;
+    font-variation-settings: "MONO" 1;
+  }
+  .tick-now {
+    top: 0; bottom: auto; height: auto; padding-left: 0; border-left: 0;
+    transform: translateX(-50%);
+    color: var(--accent); font-weight: 700;
+  }
+  .tick-now::after {
+    content: ""; position: absolute; left: 50%; top: calc(100% + 2px);
+    height: 1.4rem; border-left: 1px dashed var(--accent);
+  }
+
+  .span { border-bottom: 1px solid var(--line); }
+  .span:last-child { border-bottom: 0; }
+  .span > summary {
+    list-style: none; cursor: pointer;
+    margin-inline: -0.6rem; padding: 0 0.6rem;
+    border-radius: 0.6rem;
+  }
+  .span > summary::-webkit-details-marker { display: none; }
+  .span > summary:hover { background: color-mix(in srgb, var(--c) 9%, transparent); }
+  .span .row { min-height: 3rem; }
+  .span .name, .span .dates { padding-block: 0.6rem; }
+  .name { display: flex; align-items: center; gap: 0.6rem; min-width: 0; font-weight: 600; font-size: 1rem; }
+  .swatch { flex: none; width: 0.7rem; height: 0.7rem; border-radius: 3px; background: var(--c); }
+  .span .track {
+    align-self: stretch;
+    min-height: 1.1rem;
+    background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px);
+    background-size: calc(100% / (var(--t1) - var(--t0))) 100%;
+  }
+  .bar {
+    position: absolute; top: calc(50% - 0.55rem); height: 1.1rem;
+    left: calc((var(--start) - var(--t0)) / (var(--t1) - var(--t0)) * 100%);
+    width: calc((var(--end) - var(--start)) / (var(--t1) - var(--t0)) * 100%);
+    min-width: 0.5rem;
+    background: var(--c);
+    border-radius: 0.3rem;
+    transform-origin: left center;
+    transition: box-shadow 0.2s ease;
+  }
+  .span .track::after {
+    content: ""; position: absolute; top: 0; bottom: 0;
+    left: calc((var(--now) - var(--t0)) / (var(--t1) - var(--t0)) * 100%);
+    border-left: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+    pointer-events: none;
+  }
+  .is-current .bar {
+    border-radius: 0.3rem 0 0 0.3rem;
+    background: linear-gradient(to right, var(--c) 70%, color-mix(in srgb, var(--c) 30%, transparent));
+  }
+  .span[open] .bar { box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 30%, transparent); }
+  .dates { color: var(--muted); font-size: 0.84rem; text-align: right; white-space: nowrap; font-variation-settings: "MONO" 1; }
+  .chev {
+    width: 0.5rem; height: 0.5rem; justify-self: end;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+  .span[open] .chev { transform: translateY(2px) rotate(-135deg); }
+
+  .span-body {
+    display: grid;
+    grid-template-columns: 15.5rem 1fr;
+    column-gap: 1rem;
+    padding: 0.25rem 0 1.1rem;
+  }
+  .span-body dl {
+    grid-column: 2;
+    display: grid; gap: 0.4rem;
+    margin: 0; padding-left: 1rem;
+    border-left: 2px solid var(--c);
+  }
+  .span-body dl > div { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.75rem; }
+  .span-body dt { color: var(--muted); font-size: 0.85rem; padding-top: 0.12rem; font-variation-settings: "MONO" 1; }
+  .span-body dd { margin: 0; max-width: 60ch; }
+
+  /* One orchestrated moment: spans arrive in order, like a trace loading */
+  .js .trace .bar { transform: scaleX(0); }
+  .js .trace.is-live .bar {
+    animation: grow 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+    animation-delay: calc(var(--i) * 110ms + 150ms);
+  }
+  @keyframes grow { to { transform: scaleX(1); } }
+
+  /* Sections */
+  .section { padding-block: clamp(4rem, 9vw, 6.5rem) 0; }
+  .section h2 { margin: 0 0 0.5rem; font-size: clamp(1.7rem, 3vw, 2.25rem); font-weight: 750; letter-spacing: -0.02em; line-height: 1.15; }
+  .section-intro { margin: 0 0 2rem; max-width: 60ch; color: var(--muted); }
+
+  .results {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 2.5rem;
+  }
+  .results li { padding: 1rem 0 2rem; border-top: 2px solid var(--ink); }
+  .figure {
+    display: block;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 850; line-height: 1.05; letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .results p { margin: 0.6rem 0 0; max-width: 34ch; color: var(--muted); }
+
+  .toolkit {
+    margin: 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1.5rem 3rem;
+  }
+  .toolkit > div { padding-top: 0.9rem; border-top: 1px solid var(--line); }
+  .toolkit dt { font-weight: 650; }
+  .toolkit dd { margin: 0.15rem 0 0; color: var(--muted); }
+
+  .prose { margin-top: 1.25rem; }
+  .prose p { margin: 0 0 1rem; max-width: 62ch; }
+
+  .contact { padding-bottom: clamp(4rem, 9vw, 7rem); }
+  .email {
+    display: inline-block;
+    color: var(--ink);
+    font-size: clamp(1.35rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em;
+    text-decoration-color: var(--accent); text-decoration-thickness: 2px;
+    overflow-wrap: anywhere;
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; list-style: none; margin: 1.75rem 0 0; padding: 0; font-weight: 600; }
+
+  .footer { padding-block: 1.5rem 2.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+  .footer p { margin: 0; }
+
+  /* Narrower screens: stack the trace rows */
+  @media (max-width: 900px) {
+    .row {
+      grid-template-columns: 1fr auto 1rem;
+      grid-template-areas: "name dates chev" "track track track";
+      row-gap: 0.55rem;
+    }
+    .name { grid-area: name; }
+    .dates { grid-area: dates; }
+    .chev { grid-area: chev; }
+    .track { grid-area: track; }
+    .axis { row-gap: 0; }
+    .span > summary { padding-block: 0.7rem; }
+    .span .row { min-height: 0; }
+    .span .name, .span .dates { padding-block: 0; }
+    .span .track { align-self: center; height: 1.1rem; }
+    .axis .name, .axis .dates, .axis .chev { display: none; }
+    .span-body { grid-template-columns: 1fr; padding-top: 0.5rem; }
+    .span-body dl { grid-column: 1; }
+  }
+  @media (max-width: 640px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .tick-odd { display: none; }
+    .tick-now::after { display: none; }
+    .span-body dl > div { grid-template-columns: 1fr; gap: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .trace .bar, .js .trace.is-live .bar { transform: none; animation: none; }
+    .bar, .chev { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap nav">
+  <a class="nav-name" href="#top">David Sotunbo</a>
+  <nav aria-label="Sections">
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#toolkit">Toolkit</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="wrap hero" id="top">
+    <h1>I make production boring.</h1>
+    <p class="lede">Senior Site Reliability Engineer at Eeze Software in Malta, working on real-time iGaming platforms with a 99.99% SLA and sub-100&nbsp;ms latency. Over 7 years running Kubernetes, Terraform and observability across AWS, GCP and Azure.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="David-Sotunbo-CV.pdf" download>Download CV</a>
+      <a class="btn btn-ghost" href="mailto:sotunboolamide@gmail.com">Email me</a>
+    </div>
+    <p class="status"><span class="dot" aria-hidden="true"></span>Open to senior SRE, DevOps and platform roles in Malta or remote</p>
+
+    <section class="trace" id="experience" aria-labelledby="exp-title">
+      <div class="trace-head">
+        <h2 id="exp-title">Experience</h2>
+        <p class="trace-count">8 roles since 2018</p>
+      </div>
+      <p class="trace-hint">Each bar is a role on the timeline. Open one for details.</p>
+
+      <div class="row axis" aria-hidden="true">
+        <span class="name"></span>
+        <div class="track" id="axis-track">
+          <span class="tick" style="--y:2018">2018</span>
+          <span class="tick tick-odd" style="--y:2019">2019</span>
+          <span class="tick" style="--y:2020">2020</span>
+          <span class="tick tick-odd" style="--y:2021">2021</span>
+          <span class="tick" style="--y:2022">2022</span>
+          <span class="tick tick-odd" style="--y:2023">2023</span>
+          <span class="tick" style="--y:2024">2024</span>
+          <span class="tick tick-odd" style="--y:2025">2025</span>
+          <span class="tick" style="--y:2026">2026</span>
+        </div>
+        <span class="dates"></span>
+        <span class="chev"></span>
+      </div>
+
+      <div class="spans">
+        <details class="span" name="trace" style="--i:0; --c:var(--s-penguin); --start:2018; --end:2019.3">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Penguin Digitals</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">2018–2019</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>where</dt><dd>Nigeria</dd></div>
+            <div><dt>stack</dt><dd>AWS, Jenkins, MongoDB Atlas</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:1; --c:var(--s-ehealth); --start:2019.3; --end:2020.3">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>eHealth for Everyone</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">2019–2020</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>where</dt><dd>Nigeria</dd></div>
+            <div><dt>about</dt><dd>Healthcare data pipelines (ETL)</dd></div>
+            <div><dt>stack</dt><dd>Spark, Kafka, BigQuery</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:2; --c:var(--s-nweafor); --start:2020.3; --end:2021">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Nweafor Group</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">2020</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>where</dt><dd>Nigeria</dd></div>
+            <div><dt>about</dt><dd>Puppet migration for configuration management</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:3; --c:var(--s-cloud); --start:2021; --end:2022">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Cloud Interactive Platforms</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">2021</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>where</dt><dd>Nigeria</dd></div>
+            <div><dt>about</dt><dd>Moved source control from SVN to Git</dd></div>
+            <div><dt>stack</dt><dd>Jenkins, Kubernetes</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:4; --c:var(--s-planatech); --start:2022; --end:2023">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Planatech</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">Jan – Dec 2022</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>role</dt><dd>Senior DevOps Engineer</dd></div>
+            <div><dt>where</dt><dd>Remote, for a Costa Rica-based company</dd></div>
+            <div><dt>about</dt><dd>iGaming</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:5; --c:var(--s-modl); --start:2023; --end:2024.667">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Modl AI</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">Jan 2023 – Aug 2024</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>where</dt><dd>Malta</dd></div>
+            <div><dt>about</dt><dd>AI-powered game testing platform</dd></div>
+            <div><dt>stack</dt><dd>Nomad, Consul, HashiCorp Vault</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span" name="trace" style="--i:6; --c:var(--s-invicti); --start:2024.667; --end:2025.417">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Invicti Security</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">Sep 2024 – Jun 2025</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>about</dt><dd>Application security SaaS serving 4,000+ enterprise customers</dd></div>
+            <div><dt>clouds</dt><dd>AWS, Azure, GCP</dd></div>
+            <div><dt>result</dt><dd>Cut mean time to recovery by 40%</dd></div>
+          </dl></div>
+        </details>
+
+        <details class="span is-current" name="trace" open style="--i:7; --c:var(--s-eeze); --start:2025.417; --end:2026.8">
+          <summary><div class="row">
+            <span class="name"><span class="swatch"></span>Eeze Software</span>
+            <span class="track" aria-hidden="true"><span class="bar"></span></span>
+            <span class="dates">Jun 2025 – now</span>
+            <span class="chev" aria-hidden="true"></span>
+          </div></summary>
+          <div class="span-body"><dl>
+            <div><dt>role</dt><dd>Senior Site Reliability Engineer</dd></div>
+            <div><dt>where</dt><dd>Birkirkara, Malta</dd></div>
+            <div><dt>about</dt><dd>Real-time iGaming platforms with a 99.99% SLA and sub-100&nbsp;ms latency workloads</dd></div>
+          </dl></div>
+        </details>
+      </div>
+    </section>
+  </section>
+
+  <section class="wrap section" id="results" aria-labelledby="res-title">
+    <h2 id="res-title">Results</h2>
+    <p class="section-intro">A few numbers from recent roles.</p>
+    <ul class="results">
+      <li><span class="figure">99.99%</span><p>SLA on the real-time iGaming platforms I work on at Eeze, with sub-100&nbsp;ms latency.</p></li>
+      <li><span class="figure">−40%</span><p>Mean time to recovery at Invicti Security, an application security SaaS serving 4,000+ enterprise customers.</p></li>
+      <li><span class="figure">−35%</span><p>Repeat incidents, by fixing causes so the same failure stops coming back.</p></li>
+      <li><span class="figure">−60%</span><p>Observability overhead, by consolidating tooling onto Groundcover’s eBPF-based platform.</p></li>
+      <li><span class="figure">&lt;30 min</span><p>To resolve a production MongoDB incident.</p></li>
+    </ul>
+  </section>
+
+  <section class="wrap section" id="toolkit" aria-labelledby="tool-title">
+    <h2 id="tool-title">Toolkit</h2>
+    <p class="section-intro">What I use day to day to build, ship and run infrastructure.</p>
+    <dl class="toolkit">
+      <div><dt>Cloud</dt><dd>AWS, Google Cloud, Azure</dd></div>
+      <div><dt>Containers and scheduling</dt><dd>Kubernetes (EKS, GKE), Helm, Nomad, Consul</dd></div>
+      <div><dt>Infrastructure as code</dt><dd>Terraform, CloudFormation, Ansible</dd></div>
+      <div><dt>Delivery and GitOps</dt><dd>GitHub Actions, Jenkins, ArgoCD, Flux</dd></div>
+      <div><dt>Observability</dt><dd>Prometheus, Grafana, OpenTelemetry, Groundcover (eBPF), Datadog</dd></div>
+      <div><dt>Security and compliance</dt><dd>HashiCorp Vault, SOC 2</dd></div>
+      <div><dt>Reliability practice</dt><dd>Incident response, chaos engineering</dd></div>
+      <div><dt>Data</dt><dd>MongoDB Atlas, Redis, PostgreSQL, Kafka, Spark, BigQuery</dd></div>
+      <div><dt>Languages</dt><dd>Python, Bash, Go (familiar)</dd></div>
+    </dl>
+  </section>
+
+  <section class="wrap section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <div class="prose">
+      <p>I’ve spent more than seven years building and running infrastructure. I started in Nigeria in DevOps and data engineering, then worked across healthcare data pipelines, iGaming, AI game testing and application security SaaS. Today I’m based in Malta, keeping real-time iGaming platforms fast and available at Eeze Software.</p>
+      <p>I studied at the University of Lagos (BSc). I speak English and Yoruba, some German, and I’m learning Maltese.</p>
+    </div>
+  </section>
+
+  <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Hiring for reliability?</h2>
+    <p class="section-intro">I’m open to senior SRE, DevOps and platform roles in Malta or fully remote. Email is the quickest way to reach me.</p>
+    <a class="email" href="mailto:sotunboolamide@gmail.com">sotunboolamide@gmail.com</a>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/sotunbo-david" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/sotunboolamide" rel="me">GitHub</a></li>
+      <li><a href="David-Sotunbo-CV.pdf" download>Download CV</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <p>© <span id="year">2026</span> David Sotunbo. Hand-built and hosted on GitHub Pages.</p>
+</footer>
+
+<script>
+  (function () {
+    var trace = document.querySelector('.trace');
+    if (!trace) return;
+
+    var now = new Date();
+    var nowYear = now.getFullYear() + (now.getMonth() + now.getDate() / 31) / 12;
+    var t0 = 2018;
+    var t1 = Math.max(2027, now.getFullYear() + 1);
+
+    // Keep the timeline current: extend the axis and the current role to today.
+    trace.style.setProperty('--t1', t1);
+    trace.style.setProperty('--now', nowYear.toFixed(3));
+    trace.querySelectorAll('.span.is-current').forEach(function (s) {
+      s.style.setProperty('--end', nowYear.toFixed(3));
+    });
+
+    var axis = document.getElementById('axis-track');
+    var ticks = '';
+    for (var y = t0; y < t1; y++) {
+      ticks += '<span class="tick' + ((y - t0) % 2 ? ' tick-odd' : '') + '" style="--y:' + y + '">' + y + '</span>';
+    }
+    ticks += '<span class="tick tick-now" style="--y:' + nowYear.toFixed(3) + '">now</span>';
+    axis.innerHTML = ticks;
+
+    // Play the trace animation once, when it scrolls into view.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { trace.classList.add('is-live'); io.disconnect(); }
+        });
+      }, { threshold: 0.2 });
+      io.observe(trace);
+    } else {
+      trace.classList.add('is-live');
+    }
+
+    document.getElementById('year').textContent = now.getFullYear();
+  })();
+</script>
+</body>
+</html>
